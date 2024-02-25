@@ -1,13 +1,17 @@
-const isSuited = 100 - 10 > 90 - 5;
-console.log(isSuited);
+let a = 5;
+let b = 5.6;
+console.log(typeof a);
+console.log(typeof b);
+a = 'строка';
+console.log(typeof a);
 
-// 100 - (12) 10 > (9) 90 - (12) 5
+let isAdmin = a > 10;
+console.log(typeof isAdmin);
 
-const a = (6 + 10) / 2;
-console.log(a);
-
-let b;
 let c;
-c = b = 100 + 50 + 30;
-console.log(c);
-console.log(b);
+console.log(typeof c);
+c = 5;
+console.log(typeof c);
+
+let d = null;
+console.log(typeof d == null);
