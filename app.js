@@ -1,29 +1,20 @@
-/* 
-  Пользователь:
-  - Возраст
-  - Наличие работы
-  - Деньги
-  Нужно проверить может ли он купить новый MacBook за 2000$?
-  Он может брать не только на свои деньги, но и взять кредит.
-  Ему дадут 500$, только если ему больше 24-х лет и он имеет работу,
-  100$ если ему просто больше 24-х лет и 0 в ином случае.
-  Напишите функцию, которая принимает данные пользователя и товара и возвращает true или false;
-*/
+const roles = ['admin', 'user', 'superuser'];
+const userInfo = ['Аня', 25];
+console.log(roles);
+console.log(roles[0]);
+console.log(roles.length);
+console.log(roles[roles.length - 1]);
 
-function getCredit(age, hasJob = false) {
-	switch (true) {
-		case age > 24 && hasJob:
-			return 500;
-		case age > 24:
-			return 100;
-		default:
-			return 0;
-	}
+console.log(roles.at(0));
+console.log(roles.at(-1));
+
+const usersAge = [2040 - 2022, 10 > 0 ? 5 : 0];
+console.log(usersAge);
+
+const userNames = new Array('Вася', 'Петя', 'Катя');
+console.log(userNames);
+
+function square(el) {
+	return el * el;
 }
-
-function canBuy(productPrice, age, money, hasJob = false) {
-	const credit = getCredit(age, hasJob);
-	return productPrice <= money + credit;
-}
-
-console.log(canBuy(2000, 25, 1500, true));
+console.log(square([1, 2, 3]));
