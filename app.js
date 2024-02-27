@@ -1,20 +1,19 @@
-const roles = ['admin', 'user', 'superuser'];
-const userInfo = ['Аня', 25];
-console.log(roles);
-console.log(roles[0]);
-console.log(roles.length);
-console.log(roles[roles.length - 1]);
+const users = ['Аня', 'Вика', 'Катя'];
+console.log(users);
+users[2] = 'Кристина';
+console.log(users);
 
-console.log(roles.at(0));
-console.log(roles.at(-1));
+const arrLenght = users.push('Никита');
+console.log(arrLenght);
+console.log(users);
 
-const usersAge = [2040 - 2022, 10 > 0 ? 5 : 0];
-console.log(usersAge);
+users.unshift('Вася');
+console.log(users);
 
-const userNames = new Array('Вася', 'Петя', 'Катя');
-console.log(userNames);
+const el = users.pop();
+console.log(el);
+console.log(users);
 
-function square(el) {
-	return el * el;
-}
-console.log(square([1, 2, 3]));
+const el2 = users.shift();
+console.log(el2);
+console.log(users);
