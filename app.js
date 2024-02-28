@@ -17,15 +17,13 @@ function Add(task) {
 function Remove(task) {
 	const index = tasks.indexOf(task);
 	if (index === -1) return;
-	tasks.splice(index, 1);
+	return tasks.splice(index, 1);
 }
 
 function Prioritize(task) {
-	const index = tasks.indexOf(task);
-	if (index === -1) return;
-	const oldTask = tasks[index];
-	tasks.splice(index, 1);
-	tasks.unshift(oldTask);
+	const result = Remove(task);
+	if (!result) return;
+	tasks.unshift(result[0]);
 }
 
 Add('Задача 2');
