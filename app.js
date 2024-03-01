@@ -1,18 +1,22 @@
-/* 
-  Имеется массив изменения цен prices, где внутри
-  1й элемент массива является ценой в момент X,
-  2й - ценой в момент Y.
-  Нужно преобразовать данные в массив, где будут отображены только положительные изменения цен: [100, 150]
-*/
+const operations = [100, -20, 7, -30, 50];
 
-const prices = [
-	[100, 200],
-	[120, 100],
-	[200, 350],
-];
+// let balance = 0;
+// for (const operation of operations) {
+// 	balance += operation;
+// }
+// console.log(balance);
 
-const newProduct = prices
-	.map(product => product[1] - product[0])
-	.filter(price => price > 0);
+const finalBalance = operations.reduce((acc, operation, i) => {
+	console.log(`Итерация ${i}, acc: ${acc}, operation ${operation}`);
+	return (acc += operation);
+}, 0);
+console.log(finalBalance);
 
-console.log(newProduct);
+const minElement = operations.reduce((acc, operation) => {
+	if (operation > acc) {
+		return acc;
+	} else {
+		return operation;
+	}
+}, 0);
+console.log(minElement);
