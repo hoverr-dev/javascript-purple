@@ -1,6 +1,22 @@
-const transactionInUSD = [10, -7, 50, -10, 100];
+const operations = [100, -20, 7, -20, 50];
+// const positiveOperations = [];
 
-const transactionInRUB = transactionInUSD.map(transaction => transaction * 60);
+// for (const operation of operations) {
+// 	if (operation > 0) {
+// 		positiveOperations.push(operation);
+// 	}
+// }
 
-console.log(transactionInUSD);
-console.log(transactionInRUB);
+// console.log(positiveOperations);
+
+const positiveOperations = operations.filter(operation => {
+	return operation > 0;
+});
+console.log(positiveOperations);
+
+const positiveRUBOperations = operations
+	.filter(operation => {
+		return operation > 0;
+	})
+	.map(operation => operation * 60);
+console.log(positiveRUBOperations);
