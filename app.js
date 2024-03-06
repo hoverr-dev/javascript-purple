@@ -1,11 +1,11 @@
-const userName = 'Вася Пупкина';
+/* вытащить имя и фамилию в отдельные переменные */
+const fullUserName = 'Вася aka Terminator Perdinator Пупкин';
+
+const userName = fullUserName.slice(0, fullUserName.indexOf(' '));
 console.log(userName);
-console.log(userName[0] + userName[1]);
-console.log(userName.charAt(2));
 
-console.log(userName.length);
-console.log(userName.indexOf('уп'));
-console.log(userName.lastIndexOf('а'));
-console.log(userName.includes('упд'));
-
-console.log(userName.slice(5, 8));
+const userSurname = fullUserName.slice(
+	fullUserName.lastIndexOf(' ') + 1,
+	fullUserName.length
+);
+console.log(userSurname);
