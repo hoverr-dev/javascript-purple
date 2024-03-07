@@ -1,24 +1,22 @@
-const cities = {
-	msk: {
-		lt: 200,
-		temp: 25,
-	},
-	spb: {
-		lt: 100,
-		temp: 20,
-	},
+const user = {
+	name: 'Вася',
+	age: 40,
+	city: 'Москва',
 };
 
-let sumTemp = 0;
-let citiesCount = Object.keys(cities).length;
+const { age, ...userWithoutAge } = user;
+console.log(age);
+console.log(userWithoutAge);
 
-// for (const key in cities) {
-// 	citiesCount++;
-// 	sumTemp += cities[key].temp;
-// }
-// console.log(sumTemp / citiesCount);
+const additionalData = {
+	skills: ['Разработка', 'Дизайн'],
+	creditCard: '2341-2314-1312-5521',
+};
 
-for (const key of Object.keys(cities)) {
-	sumTemp += cities[key].temp;
-}
-console.log(sumTemp / citiesCount);
+user.test = 'dasd';
+
+// user = {
+// 	...user,
+// 	...additionalData,
+// };
+console.log(user);
