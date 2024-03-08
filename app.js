@@ -1,15 +1,56 @@
-const cities = {
-	msk: {
-		temp: {
-			celcius: 25,
-		},
+/* 
+    Сделать объект с методами добавления на склад, поиска 
+    по складу товара и расчёт веса
+*/
+
+const warehouse = {
+	goods: [],
+	findGoodById: function (id) {
+		return this.goods.find(g => g.id === id);
 	},
-	spb: {},
+	addGood: function (good) {
+		const existedGoods = this.findGoodById(good.id);
+		if (existedGoods) {
+			console.log('Этот товар уже есть на складе');
+			return;
+		}
+		this.goods.push(good);
+	},
+	getWeightKg: function () {
+		return this.goods.reduce(
+			(acc, el) => (acc += el.weight?.kg ? el.weight.kg : 0),
+			0
+		);
+	},
 };
 
-const city = 'msk';
-if (cities[city] != undefined && cities[city].temp != undefined) {
-	console.log(cities[city].temp.celcius);
-}
+/* товары */
+const car = {
+	id: 1,
+	weight: {
+		kg: 1000,
+	},
+	brand: 'Ford',
+};
 
-console.log(cities[city]?.temp?.celcius);
+const chair = {
+	id: 2,
+	weight: {
+		kg: 2,
+	},
+};
+
+const paper = {
+	id: 3,
+	color: 'red',
+};
+
+warehouse.addGood(car);
+console.log(warehouse.goods);
+warehouse.addGood(car);
+warehouse.addGood(chair);
+console.log(warehouse.goods);
+let findedId = warehouse.findGoodById(1);
+console.log(findedId);
+const w = warehouse.getWeightKg();
+console.log(w);
