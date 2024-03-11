@@ -1,19 +1,33 @@
 'use strict';
-// let, var, const func, arguments
-// Scope chain
-// this
+/* 
+    дополнить объект методами для получения имени:
+    - компании
+    - сео
+    -сотрудника
+*/
 
-function sumNum(num1, num2) {
-	console.log(this);
-	console.log(arguments);
-	return num1 + num2;
-}
-console.log(sumNum(1, 4, 3, 7));
+const company = {
+	name: 'ООО Агро',
 
-const sumNumArr = (num1, num2) => {
-	console.log(this);
-	console.log(arguments);
-	return num1 + num2;
+	employees: [
+		{
+			name: 'Света',
+			getEmployeeName: function () {
+				return this.name;
+			},
+		},
+	],
+	ceo: {
+		name: 'Вася',
+		getCEO: function () {
+			return this.name;
+		},
+	},
+	getName: function () {
+		return this.name;
+	},
 };
 
-console.log(sumNumArr(1, 4, 3, 7));
+console.log(company.getName());
+console.log(company.ceo.getCEO());
+console.log(company.employees.map(employee => employee.getEmployeeName()));
