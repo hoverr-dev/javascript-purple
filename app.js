@@ -1,19 +1,34 @@
 'use strict';
 
-function addUser() {
-	// console.log('User added');
+// console.log(this);
+
+function addNum(num1, num2) {
+	console.log(this);
+	return num1 + num2;
 }
 
-let arr1 = () => {
-	console.log('arr1');
+const addNum2 = (num1, num2) => {
+	console.log(this);
+	return num1 + num2;
 };
 
-addUser();
-console.log(b);
-let a = 3;
-var b = 2;
-console.log(b);
+const user = {
+	name: 'Вася',
+	surname: 'Пупкин',
+	getFullName: function () {
+		console.log(this);
+		return this.name + ' ' + this.surname;
+	},
+};
+user.getFullName();
 
-arr1();
+const user2 = {
+	name: 'Марина',
+	surname: 'Катц',
+};
 
-addUser();
+user2.getFullName = user.getFullName;
+user2.getFullName();
+
+// const getFullName = user.getFullName;
+// getFullName();
