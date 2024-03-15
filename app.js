@@ -1,17 +1,14 @@
 'use strict';
 
-// document.querySelector('.button').addEventListener('click', () => {
-// 	const input = document.querySelector('.input').value;
-// 	if (!input) return;
-// 	document.querySelector('.panel').innerText = input;
-// 	document.querySelector('.input').value = '';
-// });
-
 function submitForm() {
 	const input = document.querySelector('.input').value;
 	if (!input) return;
 	document.querySelector('.panel').innerText = input;
 	document.querySelector('.input').value = '';
+	// document.querySelector('.notification').classList.add('notification_active');
+	document
+		.querySelector('.notification')
+		.classList.remove('notification_hidden');
 }
 
 function inputChanged(e) {
@@ -19,9 +16,3 @@ function inputChanged(e) {
 		submitForm();
 	}
 }
-
-// document.querySelector('.input').addEventListener('keydown', e => {
-// 	if (e.code === 'Enter') {
-// 		submitForm();
-// 	}
-// });
