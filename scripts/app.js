@@ -18,7 +18,6 @@ const page = {
 };
 
 /* utils */
-
 function loadData() {
 	const habbitsString = localStorage.getItem(HABBIT_KEY);
 	const habbitArray = JSON.parse(habbitsString);
@@ -95,8 +94,14 @@ function rerender(activeHabbitId) {
 	rerenderContent(activeHabbit);
 }
 
-/* init */
+/* work with days */
+function addDays(event) {
+	event.preventDefault();
+	const data = new FormData(event.target);
+	console.log(data.get('comment'));
+}
 
+/* init */
 (() => {
 	loadData();
 	rerender(habbits[0].id);
